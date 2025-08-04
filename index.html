@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Online Leave Application</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Login Page -->
+  <div class="page active" id="login-page">
+    <div class="container small-box">
+      <div class="logo-container">
+        <span class="emoji-logo">📝</span>
+      </div>
+      <h2>Login</h2>
+      <input type="text" id="login-username" placeholder="Username">
+      <input type="password" id="login-password" placeholder="Password">
+      <button onclick="login()">Login</button>
+      <p>Don't have an account? <a href="#" onclick="showPage('register-page')">Register</a></p>
+    </div>
+  </div>
+
+  <!-- Register Page -->
+  <div class="page" id="register-page">
+    <div class="container small-box">
+      <h2>Register</h2>
+      <input type="text" id="register-username" placeholder="Username">
+      <input type="password" id="register-password" placeholder="Password">
+      <button onclick="register()">Register</button>
+    </div>
+  </div>
+
+  <!-- Apply Leave Page -->
+  <div class="page" id="apply-page">
+    <div class="container">
+      <h2>Apply Leave</h2>
+      <input type="text" id="leave-name" placeholder="Name">
+      <input type="date" id="leave-date">
+      <input type="text" id="leave-day" placeholder="Day">
+      <input type="text" id="leave-reason" placeholder="Reason">
+      <input type="number" id="leave-days" placeholder="No. of Days">
+      <button onclick="submitLeave()">Submit Leave</button>
+      <button onclick="showPage('summary-page')">View Summary</button>
+    </div>
+  </div>
+
+  <!-- Status Page -->
+  <div class="page" id="status-page">
+    <div class="container">
+      <h2>Leave Status</h2>
+      <p>Your leave is <strong>Approved</strong>.</p>
+      <button onclick="showPage('apply-page')">Apply Another Leave</button>
+      <button onclick="showPage('summary-page')">Go to Summary</button>
+    </div>
+  </div>
+
+  <!-- Summary Page -->
+  <div class="page" id="summary-page">
+    <div class="container">
+      <h2>Leave Summary</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Day</th>
+            <th>Reason</th>
+            <th>No. of Days</th>
+          </tr>
+        </thead>
+        <tbody id="summary-table-body"></tbody>
+      </table>
+      <button onclick="logout()">Logout</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
